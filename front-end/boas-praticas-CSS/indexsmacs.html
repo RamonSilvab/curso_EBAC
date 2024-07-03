@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="smacs/base.css">
+    <link rel="stylesheet" href="smacs/layout.css">
+    <link rel="stylesheet" href="smacs/module.css">
+    <link rel="stylesheet" href="smacs/tema-a.css">
+    <link rel="stylesheet" href="smacs/tema-b.css">
+</head>
+<body class="tema-b">
+    <header>
+        <div class="container">
+            <h1 class="title">Nome do site</h1>
+            <nav>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Produtos</a>
+                </li>
+                <li>
+                    <a href="#">Contato</a>
+                </li>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="accordion" class="accordion ">
+            <div class="accordion-header">
+                Nome do accordion
+            </div>
+            <p class="accordion-content">
+                conteudo
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="mensagem mensagem-is-error">
+                <h5 class="mensagem-title">Atenção</h5>
+                <p class="mensagem-conteudo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente perferendis, error exercitationem accusantium, magni delectus iusto tempora recusandae vero illo quod, labore itaque quo eum maxime nisi quidem id nam!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const accordion = document.querySelectorAll('.accordion');
+
+        for (let i = 0; i < accordion.length; i++) {
+            accordion[i].addEventListener('click', (e) => {
+                e.target.parentNode.classList.toggle('is-open');
+
+                // if (e.target.parentNode.classList.contains('is-open')) {
+                //     e.target.parentNode.classList.remove('is-open');
+                // } else {
+                //     e.target.parentNode.classList.add('is-open');
+                // }
+            })
+        }
+
+    </script>
+</body>
+</html>

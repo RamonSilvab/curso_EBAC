@@ -1,0 +1,21 @@
+@use '../variaveis';
+
+.button {
+    display: flex;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    align-items: center;
+    white-space: nowrap;
+    text-align: center;
+
+    &--primary {
+        color: variaveis.$corDoTexto;
+        background-color: variaveis.$corFundoBotao;
+    }
+
+    @media (max-width: 640px) {
+        display: block;
+    }
+}
