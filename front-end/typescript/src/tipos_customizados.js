@@ -16,4 +16,10 @@ alunos.push({
     cursos: ['Arquitetura'],
     idade: 29
 });
-console.log(alunos);
+const novoAluno = {
+    nome: 'Lucas',
+    idade: 32,
+};
+function exibeAluno(aluno) {
+    console.log(aluno.nome);
+}
