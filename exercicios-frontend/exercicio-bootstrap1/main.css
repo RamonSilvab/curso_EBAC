@@ -1,0 +1,24 @@
+.formulario {
+    margin: auto;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    padding: 40px 0;
+}
+
+#enviar {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    margin-top: 5px;
+}
+
+label.error {
+    color: red;
+}
