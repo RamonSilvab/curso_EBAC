@@ -24,7 +24,9 @@ const meuObj = {
   let contador = 0;
   const estado = reactive({
     contador: 0,
-    email: ''
+    email: '',
+    saldo: 5000 ,
+    transferindo: 0,
   });
 
   function incrementar() {
@@ -38,6 +40,17 @@ const meuObj = {
   function alteraEmail(evento) {
     estado.email = evento.target.value
   }
+
+  function mostraSaldoFuturo() {
+    const { saldo, transferindo } = estado;
+    return saldo - transferindo;
+  }
+
+  function validaValorDeTransferencia() {
+    const { saldo, transferindo } = estado;
+    return saldo >= transferindo;
+  }
+
 </script>
 
 <template>
@@ -64,11 +77,29 @@ const meuObj = {
 
   {{ estado.email }}
 
+
+
   <input type="email" @keyup="alteraEmail">
+
+  <br>
+  <hr>
+
+  Saldo: {{ estado.saldo }} <br>
+  Transferindo: {{ estado.transferindo }}, <br>
+  Saldo depois da transferencia: {{  mostraSaldoFuturo() }} <br>
+  
+
+  <input :class="{ invalido: !validaValorDeTransferencia() }" @keyup="evento => estado.transferindo = evento.target.value" type="number" placeholder="Quantia para transferir" />
+  <button v-if="validaValorDeTransferencia()" >Transferir</button>
+  <span v-else>Valor maior que o saldo</span>
 </template>
 
 <style scoped>
   img {
     max-width: 200px;
+  }
+
+  .invalido {
+    outline-color: red;
   }
 </style>
