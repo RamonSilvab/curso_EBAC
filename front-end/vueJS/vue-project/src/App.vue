@@ -1,47 +1,24 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+const nome = 'Ramon Silva'
+const meuObj = {
+  nome: 'Ramon',
+  filmeFavorito: 'The Lord of the Rings'
+}
+
+  function dizOla(nome) {
+    return `${nome} diz oi`;
+  }
+
+  const imagem = "https://assets.gamearena.gg/wp-content/uploads/2023/05/29235539/FwsaBACaIAALmek-1024x685.jpg";
+  const botaoEstaDesabilitado = false;
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <h1>{{ dizOla('Paula') }}</h1>
+  <img :src="imagem" alt="">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <button :disabled = '!botaoEstaDesabilitado'>enviar mensagem</button>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
