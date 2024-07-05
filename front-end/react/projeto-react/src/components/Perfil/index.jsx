@@ -3,16 +3,13 @@ import './perfil.css'
 // export default () => {
 // export default function() {   
 
-const Perfil = () => {
-    const usuario = {
-        nome: 'Ramon Silva',
-        avatar: 'https://github.com/RamonSilvab.png'
-    }
-
+const Perfil = ({ endereco, nome }) => {
+    // const { endereco, nome } = props;
     return (
-        <div>
-            <img className='perfil-avatar' src={usuario.avatar} />
-            <h3>{usuario.nome}</h3>
+        <div>  
+            {/* {JSON.stringify(props)} */}
+            <img className='perfil-avatar' src={ endereco } />
+            <h3 className='perfil-titulo'>{ nome }</h3> 
         </div>
     )
 }
