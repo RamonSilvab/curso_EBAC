@@ -1,7 +1,9 @@
 import './perfil.css'
 
-const Perfil = () => {
+// export default () => {
+// export default function() {   
 
+const Perfil = () => {
     const usuario = {
         nome: 'Ramon Silva',
         avatar: 'https://github.com/RamonSilvab.png'
