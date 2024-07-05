@@ -24,11 +24,11 @@ const Formulario = () => {
 
         if (media >= 7) {
             return (
-                <p>Você foi aprovado</p>
+                <p>Olá {nome}, você foi aprovado</p>
             )
         } else {
             return (
-                <p>Você foi não aprovado</p>
+                <p>Olá {nome}, você foi não aprovado</p>
             )
         }
     }
