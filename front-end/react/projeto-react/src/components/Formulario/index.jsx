@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Formulario = () => {
     let [materiaA, setMateriaA] = useState(0);
@@ -6,11 +6,13 @@ const Formulario = () => {
     let [materiaC, setMateriaC] = useState(0);
     let [nome, setNome] = useState('');
 
+    useEffect(() => {
+        console.log('o estado mudou');
+    })
+
     const alteraNome = (evento) => {
         // setNome(evento.target.value); //acessando o valor do input
         setNome(estadoAnterior => {
-            console.log(estadoAnterior);
-            
             // estadoAnterior = valornovo
 
             return evento.target.value;
@@ -19,8 +21,6 @@ const Formulario = () => {
 
     const renderizaResultado = () => {
         const media = (materiaA + materiaB + materiaC) / 3;
-
-        console.log(media);
 
         if (media >= 7) {
             return (
