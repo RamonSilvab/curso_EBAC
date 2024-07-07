@@ -9,7 +9,9 @@ function App() {
   return (
     <>
     <Perfil nome='Ramon' endereco='https://github.com/RamonSilvab.png'/>
-    <Formulario />
+    {formularioEstaVisivel && (
+      <Formulario />
+    )};
     <button onClick={() => setFormularioEstaVisivel(!formularioEstaVisivel)} type='button'>toggle form</button>
     </> 
   )

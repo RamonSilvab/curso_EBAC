@@ -6,6 +6,8 @@ const Formulario = () => {
     const [materiaC, setMateriaC] = useState(0);
     const [nome, setNome] = useState('');
 
+    
+
     useEffect(() => {
         console.log('o componente iniciou');
 
