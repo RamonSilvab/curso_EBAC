@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-    <Perfil nome='Ramon' endereco='https://github.com/RamonSilvab.png'/>
+    <Perfil nomeUsuario='RamonSilvaB'/>
     <ReposList />
     
     {/* {formularioEstaVisivel && (

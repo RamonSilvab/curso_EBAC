@@ -1,16 +1,16 @@
-import './perfil.css'
+import styles from './Perfil.module.css'
 
 // export default () => {
 // export default function() {   
 
-const Perfil = ({ endereco, nome }) => {
+const Perfil = ({ nomeUsuario }) => {
     // const { endereco, nome } = props;
     return (
-        <div>  
+        <header className={styles.header}>  
             {/* {JSON.stringify(props)} */}
-            <img className='perfil-avatar' src={ endereco } />
-            <h3 className='perfil-titulo'>{ nome }</h3> 
-        </div>
+            <img className={styles.avatar} src={ `https://github.com/${nomeUsuario}.png` } />
+            <h1 className={styles.name}>{ nomeUsuario }</h1> 
+        </header>
     )
 }
 

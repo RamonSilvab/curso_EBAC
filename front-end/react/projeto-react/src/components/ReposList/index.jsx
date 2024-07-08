@@ -1,28 +1,44 @@
 import { useEffect, useState } from "react";
 
+import styles from './ReposList.module.css'
+
 const ReposList = () => {
     const [repos, getRepos] = useState([]);
+    const [estaCarregando, setEstaCarregando] = useState(true);
 
     useEffect(() => {
         fetch('https://api.github.com/users/RamonSilvaB/repos')
             .then(res => res.json())
             .then(resJson => {
-                getRepos(resJson);
-                console.log(resJson);
+                setTimeout(() => {
+                    setEstaCarregando(false);
+                    getRepos(resJson);
+                }, 3000);
             })
     }, [])
 
     return (
-        <ul>
-            <li>Repositórios:</li>
-            {repos.map(repositorio => (
-                <li key={repositorio.id}> <br /><br />
-                    <b>Nome:</b> {repositorio.name}; <br /> 
-                    <b>Linguagem:</b> {repositorio.language} <br />
-                    <a href={repositorio.html_url} target="_blank">Visitar no GitGub</a><br />
-                </li>
-            ))}
-        </ul>
+        <div className="container">
+            {estaCarregando && (
+                <h1>Carregando...</h1>
+            )}
+            <ul className={styles.list}>
+                {/* {repos.map((repositorio) => ( */}
+                {repos.map(({ id, name, language, html_url }) => (
+                    <li className={styles.listItem} key={id}>
+                        <div className={styles.itemName}>
+                            <b>Nome:</b> {name}
+                        </div>
+                        <div className={styles.itemLanguage}>
+                            <b>Linguagem:</b> {language}
+                        </div>
+                        <div>
+                            <a className={styles.itemLink} href={html_url} target="_blank">Visitar no GitGub</a>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
     )
 }
 
