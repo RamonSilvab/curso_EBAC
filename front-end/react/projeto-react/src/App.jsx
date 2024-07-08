@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Perfil from './components/Perfil';
 import Formulario from './components/Formulario';
 import ReposList from './components/ReposList';
+import './global.css';
 
 function App() {
   const [formularioEstaVisivel, setFormularioEstaVisivel] = useState(true);
@@ -10,20 +11,20 @@ function App() {
 
   return (
     <>
-    <input type="text" placeholder='Digite o nome de usuário' onBlur={(e) => setNomeUsuario(e.target.value)}/>
-    
-    {nomeUsuario.length > 4 && (
-      <>
-        <Perfil nomeUsuario={nomeUsuario}/>
-        <ReposList nomeUsuario={nomeUsuario}/>
-      </>
-    )}
-    
-    {/* {formularioEstaVisivel && (
+      <input className='inputInicial' type="text" placeholder='Digite o nome de usuário' onBlur={(e) => setNomeUsuario(e.target.value)} />
+
+      {nomeUsuario.length > 4 && (
+        <>
+          <Perfil nomeUsuario={nomeUsuario} />
+          <ReposList nomeUsuario={nomeUsuario} />
+        </>
+      )}
+
+      {/* {formularioEstaVisivel && (
       <Formulario />
     )};
     <button onClick={() => setFormularioEstaVisivel(!formularioEstaVisivel)} type='button'>toggle form</button> */}
-    </> 
+    </>
   )
 }
 
