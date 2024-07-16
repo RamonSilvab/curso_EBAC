@@ -1,0 +1,22 @@
+import styled from 'styled-components'
+
+export const Aside = styled.aside`
+  padding: 16px;
+  background-color: #eee;
+  height: 100vh;
+`
+export const Filtros = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+`
+export const Campo = styled.input`
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  font-weght: bold;
+  color: #6666;
+  border-color: #6666;
+  width: 100%;
+`
