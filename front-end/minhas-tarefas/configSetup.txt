@@ -1,0 +1,59 @@
+inicial conifg
+
+executar o npm i
+
+exclusão dos arquivos:
+
+- App.css
+- App.test.tsx
+- index.css
+- logo.svg
+- setupTest.ts
+
+exclusão das importações:
+
+- import './index.css'; no arquivo index.tsx
+- import React from 'react'; import logo from './logo.svg'; import './App.css'; no arquivo App.tsx
+- remover o conteudo do return em App.tsx ficando somente a div
+
+instalação de plugins e extenções
+
+- npm i --save styled-components
+- npm install --save-dev @types/styled-components
+- npm i --save react-redux @reduxjs/toolkit
+- npx eslint --fix .
+
+criação de arquivos
+
+- styles/index.ts
+- importação do createGlobalStyle
+
+conteudo :
+
+    import { createGlobalStyle } from 'styled-components';
+
+    import { createGlobalStyle } from 'styled-components'
+    const EstiloGlobal = createGlobalStyle`
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Roboto, sans-serif;
+      }
+    `
+    export default EstiloGlobal
+
+importando a font Roboto
+
+no google Fonts copie os links e cole no index.html na pasta public.
+mude o titulo do projeto e coloque o idioma para pt-BR
+
+- crie a pasta containers dentro da pasta container crie a pasta BarraLateral e a pasta ListaDeTarefas.
+- crie os arquivos index.ts dentro de cada pasta e retorne a esturura html conforme desejar.
+- import os arquivos do App.tsx e coloque no retunr a estrutura conforme deseja que os elementos fiquem posicionados.
+
+instalação do spm
+
+execute o comando npm i --save react-router-dom para instalação da extenção.
+
+- após a instalação faça a importação de import { createBrowserRouter, RouterProvider} from 'react-router-dom' no arquivo App.ts
